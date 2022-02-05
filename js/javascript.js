@@ -1,8 +1,24 @@
-function fixHomepageBanner() {
+function fixHomepageBanner() 
+{
     if ($(window).width() > 1200) {
         let windowWidth = $("body").width();
         let fromLeft = document.getElementById("owl-homepageBanner-pixelcheck").getBoundingClientRect().left;
-        $("#owl-homepageBanner").css("width", windowWidth - fromLeft + "px");
+        if ($('#owl-homepageBanner').length > 0) 
+        {
+            $("#owl-homepageBanner").css("width", windowWidth - fromLeft + "px");
+        }
+        else if ($('#subheader--image').length > 0)
+        {
+            $("#subheader--image").css("width", windowWidth - fromLeft + "px");
+        }
+    }
+}
+function fixLeftBanner()
+{
+    if ($(window).width() > 1650) 
+    {
+        let leftHeight = "88px " + $(".homepage-banner .owl-item img").height() + "px";
+        $(".homepage-banner").css("background-size", leftHeight);
     }
 }
 
@@ -29,8 +45,14 @@ $(document).ready(function () {
         autoplayHoverPause:true,
         navText: ["<img src='img/banner-prev.png'>", "<img src='img/banner-next.png'>"]
     });
-
+    
+    // Fixing homepage left floating banner after we know banner height
+    fixLeftBanner();
 });
 $(window).resize(function () { 
     fixHomepageBanner();
+    setTimeout(function(){ 
+        fixLeftBanner();
+    }, 250);
+    
 });
