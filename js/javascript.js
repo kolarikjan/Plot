@@ -1,6 +1,7 @@
 function fixHomepageBanner() 
 {
-    if ($(window).width() > 1200) {
+    if ($(window).width() > 1200) 
+    {
         let windowWidth = $("body").width();
         let fromLeft = document.getElementById("owl-homepageBanner-pixelcheck").getBoundingClientRect().left;
         if ($('#owl-homepageBanner').length > 0) 
@@ -48,11 +49,33 @@ $(document).ready(function () {
     
     // Fixing homepage left floating banner after we know banner height
     fixLeftBanner();
+
+    // kalkulator app
+    $(".kalkulace-input-clickable").click(function (e) {
+        $(".kalkulace-box").removeClass("active");
+        if ($(this).closest(".kalkulace-box").hasClass("active")) 
+        {
+            $(this).closest(".kalkulace-box").removeClass("active");
+            $(this).children("input[type='radio']").removeAttr("checked");
+        }
+        else
+        {
+            $(this).closest(".kalkulace-box").addClass("active");
+            $(this).children("input[type='radio']").attr("checked", "");
+        }
+    });
+
+    // kalkulator - add gate
+    $(".kalkulace-content-add").click(function (e) { 
+        e.preventDefault();
+        let row = $(".kalkulace-content-add-content").html();
+        $(this).closest(".kalkulace-content").children(".kalkulace-rows").append(row);
+    });
+
 });
 $(window).resize(function () { 
     fixHomepageBanner();
     setTimeout(function(){ 
         fixLeftBanner();
     }, 250);
-    
 });
