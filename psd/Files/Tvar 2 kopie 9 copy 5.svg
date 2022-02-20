@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="8" viewBox="0 0 10 8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c1c1c1;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Tvar_2_kopie_9_copy_5" data-name="Tvar 2 kopie 9 copy 5" class="cls-1" d="M894.029,761l-0.03.028,4.059,3.737a0.961,0.961,0,0,0,1.264,0l0.027-.025a0.759,0.759,0,0,0,0-1.147l-1.883-1.764h5.642a0.857,0.857,0,0,0,.894-0.812v-0.035a0.856,0.856,0,0,0-.894-0.81h-5.642l1.883-1.765a0.759,0.759,0,0,0,0-1.147l-0.027-.024a0.958,0.958,0,0,0-1.264,0L894,760.972Z" transform="translate(-894 -757)"/>
+</svg>
